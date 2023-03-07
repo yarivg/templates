@@ -1,9 +1,9 @@
 environments:
   rootService1:
     name: rootService1
-    templateName: 'null'
+    templateName: 'yariv-null'
   middleService1:
     name: middleService1
-    templateName: 'null'
+    templateName: 'yariv-null'
     needs:
       - rootService1
