@@ -10,7 +10,7 @@ environments:
   middleService2:
     name: middleService2
     templateName: 'null3'
-    disabled: true
+    disabled: false
     needs:
       - rootService1
 
