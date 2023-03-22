@@ -10,6 +10,7 @@ environments:
   middleService2:
     name: middleService2
     templateName: 'null3'
+    workspaceName: 'null333'
     disabled: false
     needs:
       - rootService1
