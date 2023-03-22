@@ -1,0 +1,16 @@
+environments:
+  rootService1:
+    name: rootService1
+    templateName: 'null'
+  middleService1:
+    name: middleService1
+    templateName: 'null2'
+    needs:
+      - rootService1
+  middleService2:
+    name: middleService2
+    templateName: 'null3'
+    disabled: true
+    needs:
+      - rootService1
+
