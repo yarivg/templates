@@ -13,7 +13,7 @@ environments:
     name: middleService2
     templateName: 'null3'
     workspaceName: 'null333'
-    disabled: false
+    disabled: $DISABLED_SERVICE
     needs:
       - rootService1
 
