@@ -12,6 +12,6 @@ environments:
   middleService4:
     name: middleService4
     templateName: 'yariv-null'
-    workspace: 'middleService4'
+    workspace: 'middleService1'
     needs:
       - rootService1
