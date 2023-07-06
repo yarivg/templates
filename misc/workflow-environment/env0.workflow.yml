@@ -1,17 +1,17 @@
 environments:
-  pr12492-first:
-    name: pr12492-first
+  pr12493-first:
+    name: pr12493-first
     templateName: 'yariv-null'
-    workspace: 'pr12492-first'
-  pr12492-child:
-    name: pr12492-child
+    workspace: 'pr12493-first'
+  pr12493-child:
+    name: pr12493-child
     templateName: 'yariv-null'
-    workspace: 'pr12492-child'
+    workspace: 'pr12493-child'
     needs:
-      - pr12492-first
-  pr12492-child2:
-    name: pr12492-child2
+      - pr12493-first
+  pr12493-child2:
+    name: pr12493-child2
     templateName: 'yariv-null'
-    workspace: 'pr12492-child2'
+    workspace: 'pr12493-child2'
     needs:
-      - pr12492-first
+      - pr12493-first
