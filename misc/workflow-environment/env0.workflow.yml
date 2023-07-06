@@ -10,8 +10,8 @@ environments:
     needs:
       - pr12492-rootService1
   pr12492-middleService2:
-    name: pr12492-middleService1
+    name: pr12492-middleService2
     templateName: 'yariv-null'
-    workspace: 'pr12492-middleService1'
+    workspace: 'pr12492-middleService2'
     needs:
       - pr12492-rootService1
