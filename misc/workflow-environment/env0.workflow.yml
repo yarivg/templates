@@ -1,17 +1,17 @@
 environments:
-  pr12492-rootService1:
-    name: pr12492-rootService1
+  pr12492-first:
+    name: pr12492-first
     templateName: 'yariv-null'
-    workspace: 'pr12492-rootService1'
-  pr12492-middleService1:
-    name: pr12492-middleService1
+    workspace: 'pr12492-first'
+  pr12492-child:
+    name: pr12492-child
     templateName: 'yariv-null'
-    workspace: 'pr12492-middleService1'
+    workspace: 'pr12492-child'
     needs:
-      - pr12492-rootService1
-  pr12492-middleService2:
-    name: pr12492-middleService2
+      - pr12492-first
+  pr12492-child2:
+    name: pr12492-child2
     templateName: 'yariv-null'
-    workspace: 'pr12492-middleService2'
+    workspace: 'pr12492-child2'
     needs:
-      - pr12492-rootService1
+      - pr12492-first
