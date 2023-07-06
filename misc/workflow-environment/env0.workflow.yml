@@ -1,17 +1,17 @@
 environments:
-  rootService1:
-    name: rootService1
+  pr12492-rootService1:
+    name: pr12492-rootService1
     templateName: 'yariv-null'
-    workspace: 'rootService1'
-  middleService1:
-    name: middleService1
+    workspace: 'pr12492-rootService1'
+  pr12492-middleService1:
+    name: pr12492-middleService1
     templateName: 'yariv-null'
-    workspace: 'middleService1'
+    workspace: 'pr12492-middleService1'
     needs:
-      - rootService1
-  middleService4:
-    name: middleService4
+      - pr12492-rootService1
+  pr12492-middleService2:
+    name: pr12492-middleService2
     templateName: 'yariv-null'
-    workspace: 'middleService2'
+    workspace: 'pr12492-middleService2'
     needs:
-      - rootService1
+      - pr12492-rootService1
