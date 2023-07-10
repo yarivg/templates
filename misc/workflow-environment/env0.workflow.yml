@@ -12,6 +12,6 @@ environments:
   pr12494-child2:
     name: pr12494-child2
     templateName: 'yariv-null'
-    workspace: 'pr12494-child'
+    workspace: 'pr12494-child2'
     needs:
       - pr12494-first
