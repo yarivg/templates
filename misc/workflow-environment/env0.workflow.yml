@@ -8,7 +8,7 @@ environments:
     templateName: 'yariv-null'
     workspace: 'pr12557-child'
     needs:
-      - pr12557-first
+      - not-extisting-node
   pr12557-child2:
     name: pr12557-child2
     templateName: 'yariv-null'
