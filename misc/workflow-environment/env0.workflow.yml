@@ -1,14 +1,14 @@
 environments:
-  pr12557-first:
-    name: pr12557-first
-    templateName: 'yariv-null'
-    workspace: 'pr12557-first'
+#  pr12557-first:
+#    name: pr12557-first
+#    templateName: 'yariv-null'
+#    workspace: 'pr12557-first'
   pr12557-child:
     name: pr12557-child
     templateName: 'yariv-null'
     workspace: 'pr12557-child'
     needs:
-      - non-existing
+      - pr12557-first
   pr12557-child2:
     name: pr12557-child2
     templateName: 'yariv-null'
