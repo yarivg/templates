@@ -7,11 +7,11 @@ environments:
     name: pr12557-child
     templateName: 'yariv-null'
     workspace: 'pr12557-child'
-    needs:
-      - pr12557-first
+#    needs:
+#      - pr12557-first
   pr12557-child2:
     name: pr12557-child2
     templateName: 'yariv-null'
     workspace: 'pr12557-child2'
-    needs:
-      - pr12557-first
+#    needs:
+#      - pr12557-first
