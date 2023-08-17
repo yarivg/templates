@@ -2,6 +2,6 @@ version: 1
 
 deploy:
   steps:
-    setupVariables:
-      after:
+    k8sDiff:
+      before:
         - kubectl get pods
