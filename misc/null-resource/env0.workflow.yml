@@ -1,0 +1,18 @@
+version: 2
+deploy:
+  steps:
+    setupVariables:
+      after:
+        - name: View FIle
+          run: ls
+            | pwd
+            | cat env0-oidc-token.txt
+
+destroy:
+  steps:
+    setupVariables:
+      after:
+        - name: View FIle
+          run: ls
+            | pwd
+            | cat env0-oidc-token.txt
