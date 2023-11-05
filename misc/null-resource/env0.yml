@@ -1,8 +1,8 @@
 version: 2
 deploy:
   steps:
-    setupVariables:
-      after:
+    terraformInit:
+      before:
         - name: View FIle
           run: |
             ls
@@ -11,8 +11,8 @@ deploy:
 
 destroy:
   steps:
-    setupVariables:
-      after:
+    terraformInit:
+      before:
         - name: View FIle
           run: ls
             pwd
