@@ -4,9 +4,10 @@ deploy:
     setupVariables:
       after:
         - name: View FIle
-          run: ls
-            | pwd
-            | cat env0-oidc-token.txt
+          run: |
+            ls
+            pwd
+            cat env0-oidc-token.txt
 
 destroy:
   steps:
@@ -14,5 +15,5 @@ destroy:
       after:
         - name: View FIle
           run: ls
-            | pwd
-            | cat env0-oidc-token.txt
+            pwd
+            cat env0-oidc-token.txt
