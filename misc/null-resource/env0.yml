@@ -1,18 +1,18 @@
-version: 1
-
+version: 2
 deploy:
-  onSuccess:
-    - echo 'my onSuccess'
-    - curl --request GET --url https://api.env0.com/environments/deployments/$ENV0_DEPLOYMENT_LOG_ID -H "accept:application/json" -H "authorization:Basic aHNycWV1YWRha3N0eXRkeDpCS1k0S3dOT2U3bTc5OEhQcXBDa2lzQ3dWY25kd2NseA=="
   steps:
-    terraformInit:
-      before:
-        - echo 'my terraformInit'
-        - curl --request GET --url https://api.env0.com/environments/deployments/$ENV0_DEPLOYMENT_LOG_ID -H "accept:application/json" -H "authorization:Basic aHNycWV1YWRha3N0eXRkeDpCS1k0S3dOT2U3bTc5OEhQcXBDa2lzQ3dWY25kd2NseA=="
-    terraformApply:
+    setupVariables:
       after:
-        - echo 'my after terraformApply'
-        - curl --request GET --url https://api.env0.com/environments/deployments/$ENV0_DEPLOYMENT_LOG_ID -H "accept:application/json" -H "authorization:Basic aHNycWV1YWRha3N0eXRkeDpCS1k0S3dOT2U3bTc5OEhQcXBDa2lzQ3dWY25kd2NseA=="
+        - name: View FIle
+          run: ls
+            | pwd
+            | cat env0-oidc-token.txt
 
-  onFailure:
-    - echo 'onFailure'
+destroy:
+  steps:
+    setupVariables:
+      after:
+        - name: View FIle
+          run: ls
+            | pwd
+            | cat env0-oidc-token.txt
