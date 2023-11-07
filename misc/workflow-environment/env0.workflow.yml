@@ -1,17 +1,17 @@
 environments:
   rootService1:
     name: rootService1
-    workspace: rootService1-z
+    workspace: rootService1-w
     templateName: 'null'
 
   rootService2:
     name: rootService2
-    workspace: rootService2-z
+    workspace: rootService2-w
     templateName: 'null'
 
   middleService1:
     name: middleService1
-    workspace: middleService1-z
+    workspace: middleService-w
     templateName: 'null'
     needs:
       - rootService1
@@ -19,14 +19,14 @@ environments:
 
   middleService2:
     name: middleService2
-    workspace: middleService2-z
+    workspace: middleService2-w
     templateName: 'null'
     needs:
       - rootService2
 
   finalService:
     name: finalService
-    workspace: finalService-z
+    workspace: finalService-w
     templateName: 'null'
     needs:
       - middleService1
