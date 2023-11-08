@@ -4,12 +4,12 @@ terraform {
 
 provider "google" {
   version = ">=3.0.0"
-  project = var.project
+  project = "env0project"
 }
 
 resource "google_service_account" "account" {
-  account_id   = var.account_id
-  display_name = var.account_display_name
+  account_id   = "yariv-test-account-id"
+  display_name = "yariv"
 }
 
 resource "google_service_account_key" "key" {
