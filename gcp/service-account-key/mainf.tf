@@ -3,6 +3,7 @@ terraform {
 }
 
 provider "google" {
+  credentials = file("env0_credential_configuration.json")
   version = ">=3.0.0"
   project = "env0project"
 }
