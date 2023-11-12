@@ -10,5 +10,5 @@ provider "google" {
 resource "google_project_iam_member" "my_project_member" {
   project = "env0project"
   role    = "roles/editor"
-  member  = "user:<your-email@example.com>"
+  member  = "user:yariv.gavriel@env0.com"
 }
