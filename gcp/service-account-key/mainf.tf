@@ -7,12 +7,8 @@ provider "google" {
   project = "env0project"
 }
 
-resource "google_service_account" "account" {
-  account_id   = "yariv-test-account-id"
-  display_name = "yariv"
-}
-
-resource "google_service_account_key" "key" {
-  service_account_id = google_service_account.account.name
-  public_key_type    = "TYPE_X509_PEM_FILE"
+resource "google_project_iam_member" "my_project_member" {
+  project = "env0project"
+  role    = "roles/editor"
+  member  = "user:<your-email@example.com>"
 }
