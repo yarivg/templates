@@ -7,8 +7,10 @@ provider "google" {
   project = "env0project"
 }
 
-resource "google_project_iam_member" "my_project_member" {
-  project = "env0project"
-  role    = "roles/editor"
-  member  = "user:yariv.gavriel@env0.com"
+resource "random_id" "id" {
+  byte_length = 8
+}
+
+resource "google_bigquery_dataset" "dataset" {
+  dataset_id                  = "env0_test_${random_id.id.dec}"
 }
