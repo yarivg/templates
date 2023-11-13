@@ -3,7 +3,16 @@ deploy:
   steps:
     terraformInit:
       before:
-        - name: View FIle
+        - name: View File
           run: |
-            ls
-            pwd
+            env
+            cat env0-oidc-token.txt
+
+destroy:
+  steps:
+    terraformInit:
+      before:
+        - name: View File
+          run: |
+            env
+            cat env0-oidc-token.txt
