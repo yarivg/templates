@@ -1,0 +1,12 @@
+environments:
+  firstService:
+    name: firstService
+    templateName: 'null'
+    workspace: firstService-${TEST_VAR}
+
+  secondService:
+    name: secondService
+    templateName: 'null'
+    workspace: secondService-${TEST_VAR}
+    needs:
+      - firstService
