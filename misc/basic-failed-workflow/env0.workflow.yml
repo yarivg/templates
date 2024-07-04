@@ -17,10 +17,3 @@ environments:
     workspace: secondService-4
     needs:
       - inBetweenService
-
-  thirdService:
-    name: thirdService
-    templateName: 'null'
-    workspace: thirdService-4
-    needs:
-      - inBetweenService
