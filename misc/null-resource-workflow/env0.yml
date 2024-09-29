@@ -4,6 +4,7 @@ deploy:
   steps:
     terraformInit:
       before:
+        - echo 'echo from asd'
         - echo $from_asd
   onFailure:
     - echo 'onFailure'
