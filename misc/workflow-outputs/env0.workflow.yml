@@ -2,18 +2,33 @@ environments:
   a:
     name: a
     workspace: a
-    templateName: 'null-output-a'
+    vcs:
+      type: 'terraform'
+      terraformVersion: '1.5.7'
+      repository: 'https://github.com/yarivg/templates.git'
+      revision: 'yariv-explore-workflows'
+      path: 'misc/null-output-a'
 
   b:
     name: b
     workspace: b
-    templateName: 'null-output-b'
+    vcs:
+      type: 'terraform'
+      terraformVersion: '1.5.7'
+      repository: 'https://github.com/yarivg/templates.git'
+      revision: 'yariv-explore-workflows'
+      path: 'misc/null-output-b'
     needs:
       - a
 
   c:
     name: c
-    workspace: c-1
-    templateName: 'null-output-c'
+    workspace: c
+    vcs:
+      type: 'terraform'
+      terraformVersion: '1.5.7'
+      repository: 'https://github.com/yarivg/templates.git'
+      revision: 'yariv-explore-workflows'
+      path: 'misc/null-output-c'
     needs:
       - a
