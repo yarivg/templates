@@ -1,0 +1,19 @@
+environments:
+  a:
+    name: a
+    workspace: a
+    templateName: 'null-output-a'
+
+  b:
+    name: b
+    workspace: b
+    templateName: 'null-output-b'
+    needs:
+      - a
+
+  c:
+    name: c
+    workspace: c-1
+    templateName: 'null-output-c'
+    needs:
+      - a
