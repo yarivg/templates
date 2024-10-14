@@ -48,7 +48,7 @@ output "non_sensitive_obj" {
 }
 
 output "non_sensitive_str" {
-  value = "non sen sitive string"
+  value = "non sen string"
 }
 
 output "non_sensitive_list" {
