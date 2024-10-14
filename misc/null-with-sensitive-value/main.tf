@@ -14,12 +14,12 @@ output "sensitive_obj" {
 }
 
 output "sensitive_str" {
-  value = "sensitive string"
+  value = "sen sitive string"
   sensitive = true
 }
 
 output "sensitive_list" {
-  value = ["sensitive", "list"]
+  value = ["sen sitive", "list"]
   sensitive = true
 }
 
@@ -35,7 +35,7 @@ output "sensitive_number" {
   sensitive = true
 }
 
-// non sensitive
+// non sen sitive
 output "non_sensitive_obj" {
   value = {
     endpoint = "<http://core.cluster-c6e7cyvkajcg.eu-west-2.rds.amazonaws.com|core.cluster-c6e7cyvkajcg.eu-west-2.rds.amazonaws.com>"
@@ -48,11 +48,11 @@ output "non_sensitive_obj" {
 }
 
 output "non_sensitive_str" {
-  value = "non sensitive string"
+  value = "non sen sitive string"
 }
 
 output "non_sensitive_list" {
-  value = ["non sensitive", "list"]
+  value = ["non sen sitive", "list"]
 }
 
 output "non_sensitive_map" {
