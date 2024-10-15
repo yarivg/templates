@@ -1,65 +1,65 @@
-variable "senbool" {
+variable "sen_bool" {
   type = string
 }
 
-variable "senjson" {
+variable "sen_json" {
   type = string
 }
 
-variable "senlist" {
+variable "sen_list" {
   type = string
 }
 
-variable "senmap" {
+variable "sen_map" {
   type = string
 }
 
-variable "sennumber" {
+variable "sen_number" {
   type = string
 }
 
-variable "senobj" {
+variable "sen_obj" {
   type = string
 }
 
-variable "senset" {
+variable "sen_set" {
   type = string
 }
 
-variable "senstr" {
+variable "sen_str" {
   type = string
 }
 
 
 # non-sensitive variables
-variable "non_senbool" {
+variable "non_sen_bool" {
   type = string
 }
 
-variable "non_senjson" {
+variable "non_sen_json" {
   type = string
 }
 
-variable "non_senlist" {
+variable "non_sen_list" {
   type = string
 }
 
-variable "non_senmap" {
+variable "non_sen_map" {
   type = string
 }
 
-variable "non_sennumber" {
+variable "non_sen_number" {
   type = string
 }
 
-variable "non_senobj" {
+variable "non_sen_obj" {
   type = string
 }
 
-variable "non_senset" {
+variable "non_sen_set" {
   type = string
 }
 
-variable "non_senstr" {
+variable "non_sen_str" {
   type = string
 }
