@@ -3,39 +3,38 @@ resource "null_resource" "null1" {
 
 output "senobj" {
   value = {
-    endpoint = "<http://core.cluster-c6e7cyvkajcg.eu-west-2.rds.amazonaws.com|core.cluster-c6e7cyvkajcg.eu-west-2.rds.amazonaws.com>"
-    reader_endpoint = "<http://core.cluster-c6e7cyvkajcg.eu-west-2.rds.amazonaws.com|core.cluster-c6e7cyvkajcg.eu-west-2.rds.amazonaws.com>"
+    endpoint = "secert_endpoint"
+    reader_endpoint = "secert_reader_endpoint"
     service = {
-      username = "gitlab"
-      fake_password = "foo"
+      username = "secret_service_username"
+      fake_password = "secret_service_password"
     }
   }
   sensitive = true
 }
 
 output "senstr" {
-  value = "sen sitive string"
+  value = "some sensitive string 12348023480934#!@$@#"
   sensitive = true
 }
 
 output "senlist" {
-  value = ["sen sitive", "list"]
+  value = ["some-sensitive-list-element", "other-sensitive-list-element"]
   sensitive = true
 }
 
 output "senmap" {
   value = {
-    key = "value"
+    sensitiveKeyyyy = "sensitiveValueeee"
   }
   sensitive = true
 }
 
 output "sennumber" {
-  value = 42
+  value = 1234567890
   sensitive = true
 }
 
-// create boolean var, sets and use JSON encoding
 output "senbool" {
   value = true
   sensitive = true
@@ -48,7 +47,7 @@ output "senset" {
 
 output "senjson" {
   value = jsonencode({
-    key = "value"
+    senKey = "senValue"
   })
   sensitive = true
 }
@@ -67,29 +66,29 @@ output "non_senobj" {
 }
 
 output "non_senstr" {
-  value = "non sen string"
+  value = "public-string"
 }
 
 output "non_senlist" {
-  value = ["non sen sitive", "list"]
+  value = ["public1", "public2"]
 }
 
 output "non_senmap" {
   value = {
-    key = "value"
+    publicKeyyyy = "publicValueeee"
   }
 }
 
 output "non_sennumber" {
-  value = 42
+  value = 21222
 }
 
 output "non_senbool" {
-  value = true
+  value = false
 }
 
 output "non_senset" {
-  value = toset(["non sen sitive", "set"])
+  value = toset(["public_set1", "public_set2"])
 }
 
 output "non_senjson" {
