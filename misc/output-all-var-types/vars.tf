@@ -7,11 +7,11 @@ variable "sen_json" {
 }
 
 variable "sen_list" {
-  type = tuple
+  type = list(string)
 }
 
 variable "sen_map" {
-  type = map
+  type = map(string)
 }
 
 variable "sen_number" {
@@ -19,11 +19,11 @@ variable "sen_number" {
 }
 
 variable "sen_obj" {
-  type = object
+  type = map(string)
 }
 
 variable "sen_set" {
-  type = set
+  type = set(string)
 }
 
 variable "sen_str" {
@@ -41,11 +41,11 @@ variable "non_sen_json" {
 }
 
 variable "non_sen_list" {
-  type = tuple
+  type = list(string)
 }
 
 variable "non_sen_map" {
-  type = map
+  type = map(string)
 }
 
 variable "non_sen_number" {
@@ -53,11 +53,11 @@ variable "non_sen_number" {
 }
 
 variable "non_sen_obj" {
-  type = object
+  type = map(string)
 }
 
 variable "non_sen_set" {
-  type = set
+  type = set(string)
 }
 
 variable "non_sen_str" {
