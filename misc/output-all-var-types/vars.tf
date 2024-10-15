@@ -1,5 +1,5 @@
 variable "sen_bool" {
-  type = string
+  type = bool
 }
 
 variable "sen_json" {
@@ -7,23 +7,23 @@ variable "sen_json" {
 }
 
 variable "sen_list" {
-  type = string
+  type = tuple
 }
 
 variable "sen_map" {
-  type = string
+  type = map
 }
 
 variable "sen_number" {
-  type = string
+  type = number
 }
 
 variable "sen_obj" {
-  type = string
+  type = object
 }
 
 variable "sen_set" {
-  type = string
+  type = set
 }
 
 variable "sen_str" {
@@ -33,7 +33,7 @@ variable "sen_str" {
 
 # non-sensitive variables
 variable "non_sen_bool" {
-  type = string
+  type = bool
 }
 
 variable "non_sen_json" {
@@ -41,23 +41,23 @@ variable "non_sen_json" {
 }
 
 variable "non_sen_list" {
-  type = string
+  type = tuple
 }
 
 variable "non_sen_map" {
-  type = string
+  type = map
 }
 
 variable "non_sen_number" {
-  type = string
+  type = number
 }
 
 variable "non_sen_obj" {
-  type = string
+  type = object
 }
 
 variable "non_sen_set" {
-  type = string
+  type = set
 }
 
 variable "non_sen_str" {
