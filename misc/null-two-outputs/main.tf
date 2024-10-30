@@ -1,10 +1,10 @@
-resource "null_resource" "null1" {
+resource "null_resource" "null2" {
 }
 
 output "firstOutput" {
-  value = "some-value-1"
+  value = "some-value-1st"
 }
 
 output "secondOutput" {
-  value = "some-value-2"
+  value = "some-value-2nd"
 }
