@@ -33,7 +33,7 @@ resource "null_resource" "null4" {
 #}
 
 output "fargate_profiles" {
-  value = {}
+  value = jsonencode({})
 }
 
 #output "oidc_provider" {
