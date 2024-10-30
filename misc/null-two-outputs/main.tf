@@ -33,9 +33,7 @@ resource "null_resource" "null4" {
 #}
 
 output "fargate_profiles" {
-  value = {
-    "asd": "dsa"
-  }
+  value = {}
 }
 
 #output "oidc_provider" {
