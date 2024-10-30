@@ -33,7 +33,9 @@ resource "null_resource" "null4" {
 #}
 
 output "fargate_profiles" {
-  value = jsonencode({})
+  value = {
+    "asd": "dsa"
+  }
 }
 
 #output "oidc_provider" {
