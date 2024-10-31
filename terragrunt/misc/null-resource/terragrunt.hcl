@@ -27,16 +27,16 @@ generate "outputs" {
   path = "outputs.tf"
   if_exists = "overwrite_terragrunt"
   contents = <<EOF
-  output "cluster_version" {
-    value = "1.26"
-  }
+#  output "cluster_version" {
+#    value = "1.26"
+#  }
 
 #  output "fargate_profiles" {
 #    value = {}
 #  }
 
-  output "some_value" {
-    value = { "asdf" = "asdf" }
-  }
+#  output "some_value" {
+#    value = { "asdf" = "asdf" }
+#  }
 EOF
 }
