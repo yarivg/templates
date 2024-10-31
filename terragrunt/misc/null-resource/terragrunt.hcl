@@ -17,11 +17,11 @@ EOF
     - name: web_qa__${replace(path_relative_to_include(), "/", "__")}
       path: ./templates/terragrunt/misc/null-resource/${path_relative_to_include()}
       workflow: terragrunt
-      terraform_version: ${run_cmd("terraform", "version", "")}
+       terraform_version: ${jsondecode(run_cmd("terraform", "version", "-json")).terraform_version}
       custom_drift_detection_schedule: null
 EOF
 }
-//       terraform_version: ${jsondecode(run_cmd("terraform", "version", "-json")).terraform_version}
+//       terraform_version: ${run_cmd("terraform", "version", "")}
 
 generate "outputs" {
   path = "outputs.tf"
