@@ -17,7 +17,7 @@ EOF
     - name: web_qa__${replace(path_relative_to_include(), "/", "__")}
       path: ./templates/terragrunt/misc/null-resource/${path_relative_to_include()}
       workflow: terragrunt
-       terraform_version: ${jsondecode(run_cmd("terraform", "version", "-json")).terraform_version}
+      terraform_version: ${jsondecode(run_cmd("terraform", "version", "-json")).terraform_version}
       custom_drift_detection_schedule: null
 EOF
 }
@@ -31,9 +31,9 @@ generate "outputs" {
     value = "1.26"
   }
 
-  output "fargate_profiles" {
-    value = {}
-  }
+#  output "fargate_profiles" {
+#    value = {}
+#  }
 
   output "some_value" {
     value = { "asdf" = "asdf" }
