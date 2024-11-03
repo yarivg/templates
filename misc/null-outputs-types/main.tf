@@ -12,25 +12,37 @@
 resource "null_resource" "null4" {
 }
 
-output "string_test" {
+
+# primitive types
+output "string_output" {
   value = "sadfasdf"
 }
 
-output "empty_string" {
+output "empty_string_output" {
   value = ""
 }
 
-variable "non_sen_list" {
+output "null_string_output" {
+  value = null
+}
+
+output "boolean_output" {
+  value = true
+}
+
+output "numeric_output" {
+  value = 8
+  sensitive = true
+}
+
+# complex types
+variable "temp_list" {
   type = list(string)
   default = ["a", "b", "c"]
 }
 
-output "non_sen_list" {
-  value = var.non_sen_list
-}
-
-output "empty_object" {
-  value = {}
+output "list_sensitive" {
+  value = var.temp_list
 }
 
 output "empty_array" {
@@ -41,14 +53,9 @@ output "non_empty_array" {
   value = [1,false,"asd", {}]
 }
 
-output "boolean_output" {
-  value = true
+output "empty_object" {
+  value = {}
 }
-
-output "numeric_output" {
-  value = 8
-}
-
 
 output "non_empty_object" {
   value = {

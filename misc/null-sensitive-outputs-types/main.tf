@@ -7,6 +7,16 @@ output "string_output" {
   sensitive = true
 }
 
+output "empty_string_output" {
+  value = ""
+  sensitive = true
+}
+
+output "null_string_output" {
+  value = null
+  sensitive = true
+}
+
 output "boolean_output" {
   value = true
   sensitive = true
