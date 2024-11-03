@@ -12,8 +12,12 @@
 resource "null_resource" "null4" {
 }
 
-output "cluster_certificate_authority_data" {
+output "string_test" {
   value = "sadfasdf"
+}
+
+output "empty_string" {
+  value = ""
 }
 
 variable "non_sen_list" {
@@ -25,7 +29,7 @@ output "non_sen_list" {
   value = var.non_sen_list
 }
 
-output "fargate_profiles" {
+output "empty_object" {
   value = {}
 }
 
@@ -46,7 +50,7 @@ output "numeric_output" {
 }
 
 
-output "fargate_profiles_non_empty2" {
+output "non_empty_object" {
   value = {
     "default" = {
       "fargate_profile_name" = "default"
