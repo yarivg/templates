@@ -32,7 +32,6 @@ output "boolean_output" {
 
 output "numeric_output" {
   value = 8
-  sensitive = true
 }
 
 # complex types
