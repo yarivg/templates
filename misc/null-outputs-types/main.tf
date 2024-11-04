@@ -36,7 +36,7 @@ output "numeric_output" {
 
 # complex types
 variable "temp_list" {
-  type = list(string)
+  type    = list(string)
   default = ["a", "b", "c"]
 }
 
@@ -49,7 +49,7 @@ output "empty_array" {
 }
 
 output "non_empty_array" {
-  value = [1,false,"asd", {}]
+  value = [1, false, "asd", {}]
 }
 
 output "empty_object" {
@@ -59,6 +59,7 @@ output "empty_object" {
 output "non_empty_object" {
   value = {
     "default" = {
+      "count"                = 10
       "fargate_profile_name" = "default"
       "subnets" = [
         "subnet-0b3b3b3b3b3b3b3b3",
