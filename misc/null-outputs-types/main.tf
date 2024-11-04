@@ -67,3 +67,7 @@ output "non_empty_object" {
     "count" = 10
   }
 }
+
+output "json_as_string" {
+  value = "{\"count\": 10}"
+}
