@@ -59,11 +59,11 @@ output "empty_object" {
 output "non_empty_object" {
   value = {
     "default" = {
-      "count"                = 10
       "fargate_profile_name" = "default"
       "subnets" = [
         "subnet-0b3b3b3b3b3b3b3b3",
       ]
-    }
+    },
+    "count" = 10
   }
 }
