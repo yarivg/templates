@@ -8,7 +8,7 @@ EOF
 }
 
 
- generate "env0_metadata" {
+generate "env0_metadata" {
   path      = ".env0_metadata"
   if_exists = "overwrite"
   contents  = <<EOF
@@ -35,8 +35,20 @@ generate "outputs" {
 #    value = {}
 #  }
 
-#  output "some_value" {
-#    value = { "asdf" = "asdf" }
-#  }
+  output "some_value" {
+    value = { "asdf" = "asdf" }
+  }
 EOF
+}
+
+terraform {
+  before_hook "before_hook" {
+    commands     = ["output"]
+    execute      = ["echo", "{}"]
+  }
+
+  after_hook "after_hook" {
+    commands     = ["output"]
+    execute      = ["echo", "{}"]
+  }
 }
