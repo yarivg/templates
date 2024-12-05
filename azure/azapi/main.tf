@@ -19,7 +19,12 @@ provider "azurerm" {
 provider "azapi" {
 }
 
-resource "azurerm_resource_group" "example" {
-  name     = "example-rg"
-  location = "west europe"
+resource "azapi_resource" "yariv_example_resource_group" {
+  type     = "Microsoft.Resources/resourceGroups@2022-09-01" # ARM API for Resource Groups
+  name     = "yariv-example-resource-group"
+  location = "East US"
+
+  body = jsonencode({
+    properties = {} # Resource groups do not have additional properties
+  })
 }
