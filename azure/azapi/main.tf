@@ -18,18 +18,3 @@ resource "azapi_resource" "example_resource_group" {
     properties = {} # Resource groups do not have additional properties
   })
 }
-
-resource "azapi_resource" "example_storage_account" {
-  type      = "Microsoft.Storage/storageAccounts@2022-09-01" # Storage Account ARM API version
-  name      = "examplestorageacct"
-  location  = azapi_resource.example_resource_group.location
-  parent_id = azapi_resource.example_resource_group.id
-
-  body = jsonencode({
-    sku = {
-      name = "Standard_LRS"
-    }
-    kind     = "StorageV2"
-    properties = {}
-  })
-}
