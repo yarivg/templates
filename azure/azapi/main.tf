@@ -1,20 +1,15 @@
 terraform {
   required_providers {
     azapi = {
-      source  = "azure/azapi"
-      version = "1.8.0" # Specify the appropriate version
+      source = "azure/azapi"
     }
   }
 }
 
-provider "azapi" {}
+provider "azapi" {
+}
 
-resource "azapi_resource" "example_resource_group" {
-  type     = "Microsoft.Resources/resourceGroups@2022-09-01" # Resource Group ARM API version
-  name     = "example-resource-group"
-  location = "East US"
-
-  body = jsonencode({
-    properties = {} # Resource groups do not have additional properties
-  })
+resource "azurerm_resource_group" "example" {
+  name     = "example-rg"
+  location = "west europe"
 }
