@@ -1,3 +1,12 @@
+terraform {
+  required_providers {
+    azapi = {
+      source  = "azure/azapi"
+      version = "1.8.0" # Specify the appropriate version
+    }
+  }
+}
+
 provider "azapi" {}
 
 resource "azapi_resource" "example_resource_group" {
