@@ -3,11 +3,11 @@ version: 1
 deploy:
   steps:
     setupVariables:
-      after: &login-k8s
-        - aws eks --region=us-east-1 update-kubeconfig --name kushield --alias kushield
-        - kubectl config get-contexts
-        - kubectl config set-context kushield
+      after: &set-namespace-name
+        - echo "$(sed 's/!!!NAMESPACE!!!/'"$ENV0_K8S_NAMESPACE"'/g' namespace.yaml)" > namespace.yaml;
+        - cat namespace.yaml
+
 destroy:
   steps:
     setupVariables:
-      after: *login-k8s
+      after: *set-namespace-name
