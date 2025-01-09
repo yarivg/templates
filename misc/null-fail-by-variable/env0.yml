@@ -13,4 +13,5 @@ deploy:
       after:
         - name: check SHOULD_PASS
           run: |
+            echo $ENV0_TEMPLATE_DIR
             if [ -z "$SHOULD_PASS" ]; then echo "SHOULD_PASS must be supplied" 1>&2 && exit 1; fi
