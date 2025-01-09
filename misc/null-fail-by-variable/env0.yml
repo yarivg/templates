@@ -1,6 +1,16 @@
-version: 1
+version: 2
 deploy:
+  onFailure:
+    - name: Add Helm Repo
+      run: |
+        helm repo add repo https://repo21edgesaliasingress.jfrog.io/artifactory/repo21edgesaliasingress-helm \
+          --username someUsername \
+          --password somePassword \
+          --pass-credentials
+
   steps:
     setupVariables:
       after:
-        - if [ -z "$SHOULD_PASS" ]; then echo "SHOULD_PASS must be supplied" 1>&2 && exit 1; fi
+        - name: check SHOULD_PASS
+          run: |
+            if [ -z "$SHOULD_PASS" ]; then echo "SHOULD_PASS must be supplied" 1>&2 && exit 1; fi
