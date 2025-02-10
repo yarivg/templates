@@ -5,7 +5,6 @@ environments:
       type: 'terraform'
       terraformVersion: '1.5.7'
       repository: 'https://github.com/yarivg/templates'
-      branch: 'yariv-wf-check'
       path: 'misc/null-resource'
 
   parent1:
@@ -14,7 +13,6 @@ environments:
       type: 'terraform'
       terraformVersion: '1.5.7'
       repository: 'https://github.com/yarivg/templates'
-      branch: 'yariv-wf-check'
       path: 'misc/null-resource'
     needs:
       - grandParent
@@ -25,7 +23,6 @@ environments:
       type: 'terraform'
       terraformVersion: '1.5.7'
       repository: 'https://github.com/yarivg/templates'
-      branch: 'yariv-wf-check'
       path: 'misc/null-resource'
     needs:
       - grandParent
