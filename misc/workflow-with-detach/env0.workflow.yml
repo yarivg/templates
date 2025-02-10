@@ -16,16 +16,16 @@ environments:
       path: 'misc/null-resource'
     needs:
       - grandParent
-
-  parent2:
-    name: 'parent2'
-    vcs:
-      type: 'terraform'
-      terraformVersion: '1.5.7'
-      repository: 'https://github.com/yarivg/templates'
-      path: 'misc/null-resource'
-    needs:
-      - grandParent
+#
+#  parent2:
+#    name: 'parent2'
+#    vcs:
+#      type: 'terraform'
+#      terraformVersion: '1.5.7'
+#      repository: 'https://github.com/yarivg/templates'
+#      path: 'misc/null-resource'
+#    needs:
+#      - grandParent
 
   child:
     name: 'grandParent'
