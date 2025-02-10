@@ -1,0 +1,43 @@
+environments:
+  grandParent:
+    name: 'grandParent'
+    vcs:
+      type: 'terraform'
+      terraformVersion: '1.5.7'
+      repository: 'https://github.com/yarivg/templates'
+      branch: 'yariv-wf-check'
+      path: 'misc/null-resource'
+
+  parent1:
+    name: 'parent1'
+    vcs:
+      type: 'terraform'
+      terraformVersion: '1.5.7'
+      repository: 'https://github.com/yarivg/templates'
+      branch: 'yariv-wf-check'
+      path: 'misc/null-resource'
+    needs:
+      - grandParent
+
+  parent2:
+    name: 'parent2'
+    vcs:
+      type: 'terraform'
+      terraformVersion: '1.5.7'
+      repository: 'https://github.com/yarivg/templates'
+      branch: 'yariv-wf-check'
+      path: 'misc/null-resource'
+    needs:
+      - grandParent
+
+  child:
+    name: 'grandParent'
+    vcs:
+      type: 'terraform'
+      terraformVersion: '1.5.7'
+      repository: 'https://github.com/yarivg/templates'
+      branch: 'yariv-wf-check'
+      path: 'misc/null-resource'
+    needs:
+      - parent1
+      - parent2
