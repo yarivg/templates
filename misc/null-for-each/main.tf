@@ -19,5 +19,5 @@ resource "local_file" "example" {
 resource "null_resource" "null1" {
 }
 
-resource "null_resource" "null2" {
+resource "null_resource" "null3" {
 }
