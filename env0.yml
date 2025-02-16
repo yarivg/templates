@@ -1,0 +1,14 @@
+version: 2
+
+deploy:
+  steps:
+    terraformInit:
+      before:
+        - name: Ensure Merge Before Apply ,
+          run: |
+            if [ "$ENV0_DEPLOYER_USER_ID" = "env0-system" ] && [ "$ENV0_DEPLOYMENT_TYPE" = "deploy" ]; then
+              if [ "$ENV0_TEMPLATE_REVISION" != "$ENV0_PR_SOURCE_BRANCH" ]; then
+                echo "Error: You can't apply before merging. The template revision differs from the PR source branch."
+                exit 1
+              fi
+            fi
