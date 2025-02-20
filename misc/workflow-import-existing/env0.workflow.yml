@@ -1,5 +1,5 @@
 environments:
   importedEnvironment:
     name: importedEnvironment
-    workspace: env0d3aaf5
-    templateName: 'null'
+    workspace: FrontEnd-Servers-EC2-19354-70965856
+    templateName: 'FrontEnd Servers EC2'
