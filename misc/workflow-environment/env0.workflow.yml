@@ -25,7 +25,7 @@ environments:
       - rootService2
 
   finalService:
-    name: finalService
+    name: finalServiceAfterRename
     workspace: finalService-1
     templateName: 'null-workflow-output'
     needs:
