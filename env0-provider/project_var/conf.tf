@@ -22,6 +22,10 @@ variable "ROLE_ID" {
   default = "***"
 }
 
+variable "PARENT_PROJECT_ID" {
+  default = "***"
+}
+
 #output "some-output" {
 #  value = "asd"
 #}
