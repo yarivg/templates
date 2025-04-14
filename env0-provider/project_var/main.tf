@@ -19,7 +19,7 @@ resource "env0_project" "project_with_cd" {
 resource "env0_configuration_variable" "project_var" {
   name       = "project_metadata"
   type       = "terraform"
-  value      = "{}"
+  value      = "{\"project_metadata\": \"test\"}"
   project_id = env0_project.project_with_cd.id
 
   is_read_only = false
