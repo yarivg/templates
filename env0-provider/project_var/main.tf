@@ -9,6 +9,9 @@ resource "env0_project" "project_with_cd" {
   parent_project_id = var.PARENT_PROJECT_ID
 }
 
+variable "PROJECT_VAR_VALUE" {
+  default = "{\"project_metadata\": \"test\"}"
+}
 #resource "env0_project_policy" "example" {
 #  project_id        = env0_project.project_with_cd.id
 #
