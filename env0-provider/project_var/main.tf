@@ -22,7 +22,7 @@ variable "PROJECT_VAR_VALUE" {
 resource "env0_configuration_variable" "project_var" {
   name       = "project_metadata"
   type       = "terraform"
-  value      = "{}"
+  value      = var.PROJECT_VAR_VALUE
   project_id = env0_project.project_with_cd.id
 
   is_read_only = false
