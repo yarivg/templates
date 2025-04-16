@@ -9,7 +9,7 @@ resource "env0_project" "project_with_cd" {
   parent_project_id = var.PARENT_PROJECT_ID
 }
 
-resource "env0_project" "project_with_cd" {
+resource "env0_project" "second_project" {
   name = "test_project_with_var_visa_second"
   parent_project_id = var.PARENT_PROJECT_ID
 }
