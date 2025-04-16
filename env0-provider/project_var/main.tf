@@ -28,7 +28,7 @@ resource "env0_configuration_variable" "project_var" {
   name       = "project_metadata"
   type       = "terraform"
   value      = var.PROJECT_VAR_VALUE
-  project_id = env0_project.second_project.id
+  project_id = null
 
   is_read_only = false
   is_sensitive = false
