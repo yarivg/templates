@@ -9,6 +9,11 @@ resource "env0_project" "project_with_cd" {
   parent_project_id = var.PARENT_PROJECT_ID
 }
 
+resource "env0_project" "project_with_cd" {
+  name = "test_project_with_var_visa_second"
+  parent_project_id = var.PARENT_PROJECT_ID
+}
+
 variable "PROJECT_VAR_VALUE" {
   default = "{\"project_metadata\": \"test\"}"
 }
