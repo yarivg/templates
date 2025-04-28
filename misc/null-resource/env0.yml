@@ -5,6 +5,5 @@ deploy:
       after:
         - name: Install Bazel
           run: |
-            echo "@testing https://dl-cdn.alpinelinux.org/alpine/edge/testing" | sudo tee -a /etc/apk/repositories
-            apk update
-            apk add --no-cache bazel6@testing
+            curl -O https://dl-cdn.alpinelinux.org/alpine/edge/testing/x86_64/bazel-6.5.0-r3.apk
+            sudo apk add --allow-untrusted bazel-6.5.0-r3.apk
