@@ -6,4 +6,5 @@ deploy:
         - name: Install Bazel
           run: |
             curl -O https://dl-cdn.alpinelinux.org/alpine/edge/testing/x86_64/bazel-6.5.0-r3.apk
+            
             sudo apk add --allow-untrusted bazel-6.5.0-r3.apk
