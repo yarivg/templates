@@ -1,24 +1,10 @@
-version: 1
-
+version: 2
 deploy:
-  onSuccess:
-    - echo 'my onSuccess'
-    - curl --request GET --url https://api.env0.com/environments/deployments/$ENV0_DEPLOYMENT_LOG_ID -H "accept:application/json" -H "authorization:Basic aHNycWV1YWRha3N0eXRkeDpCS1k0S3dOT2U3bTc5OEhQcXBDa2lzQ3dWY25kd2NseA=="
   steps:
-    terraformInit:
-      before:
-        - echo 'my after terraformApply'
-        - curl --request GET --url https://api.env0.com/environments/deployments/$ENV0_DEPLOYMENT_LOG_ID -H "accept:application/json" -H "authorization:Basic aHNycWV1YWRha3N0eXRkeDpCS1k0S3dOT2U3bTc5OEhQcXBDa2lzQ3dWY25kd2NseA=="
-    terraformApply:
+    setupVariables:
       after:
-        - echo 'my after terraformApply'
-        - curl --request GET --url https://api.env0.com/environments/deployments/$ENV0_DEPLOYMENT_LOG_ID -H "accept:application/json" -H "authorization:Basic aHNycWV1YWRha3N0eXRkeDpCS1k0S3dOT2U3bTc5OEhQcXBDa2lzQ3dWY25kd2NseA=="
-
-  onFailure:
-    - echo 'onFailure'
-
-destroy:
-  steps:
-    terraformDestroy:
-      before:
-        - echo 'waittt'
+        - name: Install Bazel
+          run: |
+            echo "@testing https://dl-cdn.alpinelinux.org/alpine/edge/testing" | sudo tee -a /etc/apk/repositories
+            apk update
+            apk add --no-cache bazel6@testing
