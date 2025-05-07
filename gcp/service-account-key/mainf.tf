@@ -1,5 +1,5 @@
 terraform {
-  required_version  = ">=0.12.3"
+  required_version  = "1.5.7"
 }
 
 provider "google" {
@@ -15,4 +15,7 @@ resource "google_service_account" "account" {
 resource "google_service_account_key" "key" {
   service_account_id = google_service_account.account.name
   public_key_type    = "TYPE_X509_PEM_FILE"
+}
+
+resource "null_resource" "demo_null_resource" {
 }
