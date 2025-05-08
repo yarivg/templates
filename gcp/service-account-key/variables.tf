@@ -8,7 +8,12 @@ variable "account_display_name" {
   description = "The display name of the service account that will be created"
 }
 
-variable "project" {
+variable "project_name" {
+  type = string
+  description = "The GCP project name"
+}
+
+variable "project_id" {
   type = string
   description = "The GCP project id"
 }

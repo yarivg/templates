@@ -4,12 +4,12 @@ terraform {
 
 provider "google" {
   version = ">=3.0.0"
-  project = var.project
+  project = var.project_name
 }
 
 ## Data Resources
 data "google_service_account" "account" {
-  account_id = "yariv-test@${var.project}.iam.gserviceaccount.com"
+  account_id = "yariv-test@${var.project_id}.iam.gserviceaccount.com"
 }
 
 ## GCP Resource
@@ -21,6 +21,12 @@ resource "google_service_account" "account" {
 resource "google_service_account_key" "key" {
   service_account_id = google_service_account.account.name
   public_key_type    = "TYPE_X509_PEM_FILE"
+}
+
+resource "google_storage_bucket" "storage_buckets" {
+  count    = 2
+  name     = "yariv-demo-buckets-${count.index}-${var.project_name}"
+  location = "US"
 }
 
 ## Modules
