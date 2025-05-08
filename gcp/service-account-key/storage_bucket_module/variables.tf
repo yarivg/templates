@@ -8,3 +8,8 @@ variable "location" {
   type        = string
   default     = "US"
 }
+
+variable "project_id" {
+  description = "The GCP project id"
+  type        = string
+}

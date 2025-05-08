@@ -36,6 +36,7 @@ module "storage_bucket" {
   source      = "./storage_bucket_module"
   bucket_name = "yariv-demo-bucket-${var.account_id}"
   location    = "US"
+  project_id  = var.project_id
 }
 
 ## Non GCP Resources
