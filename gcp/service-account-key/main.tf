@@ -28,6 +28,7 @@ resource "google_storage_bucket" "storage_buckets" {
   count    = 2
   name     = "yariv-demo-buckets-${count.index}-${var.project_name}"
   location = "US"
+  project = var.project_id
 }
 
 ## Modules
