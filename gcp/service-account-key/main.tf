@@ -9,7 +9,7 @@ provider "google" {
 
 ## Data Resources
 data "google_service_account" "account" {
-  account_id = "yariv-test@env0project.iam.gserviceaccount.com"
+  account_id = "yariv-test@${var.project}.iam.gserviceaccount.com"
 }
 
 ## GCP Resource
