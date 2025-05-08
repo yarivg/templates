@@ -7,6 +7,12 @@ provider "google" {
   project = var.project
 }
 
+## Data Resources
+data "google_service_account" "account" {
+  account_id = "yariv-test@env0project.iam.gserviceaccount.com"
+}
+
+## GCP Resource
 resource "google_service_account" "account" {
   account_id   = var.account_id
   display_name = var.account_display_name
@@ -17,5 +23,18 @@ resource "google_service_account_key" "key" {
   public_key_type    = "TYPE_X509_PEM_FILE"
 }
 
+## Modules
+module "storage_bucket" {
+  source      = "./storage_bucket_module"
+  bucket_name = "yariv-demo-bucket-${var.account_id}"
+  location    = "US"
+}
+
+## Non GCP Resources
 resource "null_resource" "demo_null_resource" {
+}
+
+## Outputs
+output "bucket_name" {
+  value = module.storage_bucket.bucket_name
 }
