@@ -34,7 +34,7 @@ resource "google_project_iam_member" "viewer" {
 module "iam_member" {
   source      = "./iam_member_module"
   project_id  = var.project_id
-  member      = "serviceAccount:yariv-service-account-tf@yariv-project-id-1234.iam.gserviceaccount.com"
+  member      = "yariv-service-account-tf@yariv-project-id-1234.iam.gserviceaccount.com"
 }
 
 ## Non GCP Resources
