@@ -33,14 +33,14 @@ resource "google_service_account" "account" {
 
 resource "google_project_iam_member" "viewer" {
   count   = 2
-  project = "your-project-id"
+  project = var.project_id
   role    = "roles/viewer"
   member  = "serviceAccount:asd${count.index}@gmail.com"
 }
 
 ## Modules
-module "storage_bucket" {
-  source      = "./storage_bucket_module"
+module "iam_member" {
+  source      = "iam_member_module"
   bucket_name = "yariv-demo-bucket-${var.account_id}"
   location    = "US"
   project_id  = var.project_id
@@ -51,6 +51,6 @@ resource "null_resource" "demo_null_resource" {
 }
 
 ## Outputs
-output "bucket_name" {
-  value = module.storage_bucket.bucket_name
+output "iam_member_output" {
+  value = module.iam_member.iam_member
 }
