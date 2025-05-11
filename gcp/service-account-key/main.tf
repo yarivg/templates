@@ -40,7 +40,7 @@ resource "google_project_iam_member" "viewer" {
 
 ## Modules
 module "iam_member" {
-  source      = "iam_member_module"
+  source      = "./iam_member_module"
   bucket_name = "yariv-demo-bucket-${var.account_id}"
   location    = "US"
   project_id  = var.project_id
