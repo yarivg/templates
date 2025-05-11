@@ -1,5 +1,5 @@
 resource "google_project_iam_member" "viewer" {
-  count   = 3
+  count   = 4
   project = var.project_id
   role    = "roles/viewer"
   member  = "serviceAccount:${var.member}"
