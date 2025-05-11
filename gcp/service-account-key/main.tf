@@ -19,31 +19,22 @@ resource "google_service_account" "account" {
   display_name = var.account_display_name
 }
 
-#resource "google_service_account_key" "key" {
-#  service_account_id = google_service_account.account.name
-#  public_key_type    = "TYPE_X509_PEM_FILE"
-#}
-#
-#resource "google_storage_bucket" "storage_buckets" {
-#  count    = 2
-#  name     = "yariv-demo-buckets-${count.index}-${var.project_name}"
-#  location = "US"
-#  project = var.project_id
-#}
+resource "google_service_account_key" "key" {
+  service_account_id = google_service_account.account.name
+  public_key_type    = "TYPE_X509_PEM_FILE"
+}
 
 resource "google_project_iam_member" "viewer" {
-  count   = 2
   project = var.project_id
   role    = "roles/viewer"
-  member  = "serviceAccount:asd${count.index}@gmail.com"
+  member  = "serviceAccount:yariv-service-account-tf@yariv-project-id-1234.iam.gserviceaccount.com"
 }
 
 ## Modules
 module "iam_member" {
   source      = "./iam_member_module"
-  bucket_name = "yariv-demo-bucket-${var.account_id}"
-  location    = "US"
   project_id  = var.project_id
+  member      = "serviceAccount:yariv-service-account-tf@yariv-project-id-1234.iam.gserviceaccount.com"
 }
 
 ## Non GCP Resources
