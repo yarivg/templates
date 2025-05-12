@@ -48,6 +48,25 @@ resource "google_compute_instance" "smallest_vm" {
   }
 }
 
+## Cloud Run Service
+resource "google_cloud_run_service" "default" {
+  name     = "yariv-test-cloudrun-srv"
+  location = "us-central1"
+
+  template {
+    spec {
+      containers {
+        image = "us-docker.pkg.dev/cloudrun/container/hello"
+      }
+    }
+  }
+
+  traffic {
+    percent         = 100
+    latest_revision = true
+  }
+}
+
 ## Modules
 module "iam_member" {
   source      = "./iam_member_module"
