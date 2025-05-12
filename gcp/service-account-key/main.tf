@@ -30,6 +30,24 @@ resource "google_project_iam_member" "viewer" {
   member  = "serviceAccount:yariv-service-account-tf@yariv-project-id-1234.iam.gserviceaccount.com"
 }
 
+## Compute Instance
+resource "google_compute_instance" "smallest_vm" {
+  name         = "smallest-vm"
+  machine_type = "e2-micro"
+  zone         = "us-central1-a"
+
+  boot_disk {
+    initialize_params {
+      image = "debian-cloud/debian-11"
+    }
+  }
+
+  network_interface {
+    network = "default"
+    access_config {} # Required for external IP
+  }
+}
+
 ## Modules
 module "iam_member" {
   source      = "./iam_member_module"
