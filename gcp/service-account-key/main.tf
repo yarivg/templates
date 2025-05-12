@@ -51,7 +51,7 @@ resource "google_compute_instance" "smallest_vm" {
 ## Cloud Run Service
 resource "google_cloud_run_service" "default" {
   name     = "yariv-test-cloudrun-srv"
-  location = "us-central1"
+  location = "us-central1-a"
 
   template {
     spec {
