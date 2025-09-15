@@ -10,7 +10,7 @@ terraform {
 }
 
 resource "aws_iam_account_password_policy" "fail_insecure_password" {
-  minimum_password_length        = 8  # Too short (below required 14)
+  minimum_password_length        = var.password_length  # Controlled via variable
   require_lowercase_characters   = false  # Missing requirement
   require_uppercase_characters   = false  # Missing requirement
   require_numbers                = false  # Missing requirement
