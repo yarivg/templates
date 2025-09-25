@@ -61,6 +61,7 @@ resource "env0_template" "example_github_installation_id" {
   description            = each.value.description
   repository             = "https://github.com/env0/templates"
   terraform_version      = "1.1.9"
+  type                   = "opentofu"
   github_installation_id = 11477608
 }
 
