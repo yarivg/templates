@@ -2,8 +2,6 @@ terraform {
   required_providers {
     env0 = {
       source  = "env0/env0"
-      # Choose a compatible version; adjust if your workspace pins a different one
-      version = ">= 2.0.0"
     }
   }
 }
