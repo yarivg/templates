@@ -12,7 +12,7 @@ variable "dns" {
 }
 
 output "out_dns" {
-  value = var.dns == null ? "null DNS" : "Existing DNS" + jsonencode(var.dns) 
+  value = var.dns == null ? "null DNS" : "The configured DNS name is: ${var.dns.name}"
 }
 
 output "a" {
