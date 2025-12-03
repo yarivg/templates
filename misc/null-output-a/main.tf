@@ -8,7 +8,7 @@ variable "dns" {
     value = string
   })
   
-  default = null
+  default = {name = "www", type = "A", value = "192.168.1.10"}
 }
 
 output "out_dns" {
