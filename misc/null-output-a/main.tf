@@ -12,7 +12,7 @@ variable "dns" {
 }
 
 output "out_dns" {
-  value = var.dns == null ? "null DNS" : "Existing DNS" + tostring(var.dns)
+  value = var.dns == null ? "null DNS" : "Existing DNS" + jsonencode(var.dns) 
 }
 
 output "a" {
