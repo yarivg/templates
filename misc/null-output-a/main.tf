@@ -3,9 +3,11 @@ resource "null_resource" "null1" {
 
 variable "dns" {
   type = object({
-    ...
+    name = string
+    type = string
+    value = string
   })
-
+  
   default = null
 }
 
