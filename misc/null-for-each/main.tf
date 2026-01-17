@@ -15,3 +15,9 @@ resource "local_file" "example" {
   filename = each.key
   content  = each.value
 }
+
+resource "null_resource" "null1" {
+}
+
+resource "null_resource" "null3" {
+}
