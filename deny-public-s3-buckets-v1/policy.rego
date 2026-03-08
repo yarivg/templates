@@ -57,6 +57,10 @@ deny contains msg if {
 	msg := sprintf("%s: S3 bucket must enable 'restrict_public_buckets'", [r.address])
 }
 
+allow contains "No public S3 bucket violations found" if {
+	count(deny) == 0
+}
+
 wildcard_principal_check(prin) if {
 	prin == "*"
 }
