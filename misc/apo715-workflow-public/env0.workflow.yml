@@ -8,3 +8,8 @@ environments:
     name: apo715-sub-norev
     templateName: 'apo715-null'
     workspace: apo715-sub-norev
+  apo715-sub-override:
+    name: apo715-sub-override
+    templateName: 'apo715-null'
+    revision: master
+    workspace: apo715-sub-override
