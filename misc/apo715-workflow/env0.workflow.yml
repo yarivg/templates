@@ -1,0 +1,6 @@
+environments:
+  apo715-sub:
+    name: apo715-sub
+    templateName: 'null-clean-demo'
+    revision: main
+    workspace: apo715-sub
