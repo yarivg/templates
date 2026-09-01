@@ -4,3 +4,7 @@ environments:
     templateName: 'null-clean-demo'
     revision: main
     workspace: apo715-sub
+  apo715-sub-norev:
+    name: apo715-sub-norev
+    templateName: 'null-clean-demo'
+    workspace: apo715-sub-norev
