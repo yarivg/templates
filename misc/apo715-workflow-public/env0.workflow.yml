@@ -1,0 +1,10 @@
+environments:
+  apo715-sub:
+    name: apo715-sub
+    templateName: 'apo715-null'
+    revision: master
+    workspace: apo715-sub
+  apo715-sub-norev:
+    name: apo715-sub-norev
+    templateName: 'apo715-null'
+    workspace: apo715-sub-norev
